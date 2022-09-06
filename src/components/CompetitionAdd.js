@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import RegisterService from '../services/RegisterService';
+import CompetitionService from '../services/CompetitionService';
 
-const Register = () => {
+const CompetitionAdd = () => {
     const [name, setName] = useState('');
     const [type, setType] = useState('full');
     const [location, setLocation] = useState('');
@@ -11,7 +11,7 @@ const Register = () => {
     const [team, setTeam] = useState('');
     const navigate = useNavigate();
 
-    const register = async (e) => {
+    const addCompetition = async (e) => {
         e.preventDefault()
         try {
             let data = {
@@ -22,7 +22,7 @@ const Register = () => {
                 end,
                 team
             };
-            await RegisterService.register(data);
+            await CompetitionService.createCompetition(data);
             navigate('/');
         } catch (error) {
             console.log(error)
@@ -32,7 +32,7 @@ const Register = () => {
     return (
        
         <div className='container mt-5'>
-            <form onSubmit={register}>
+            <form onSubmit={addCompetition}>
                 <div className='form-group row'>
                     <label className='col-sm-2 col-form-label'>Name</label>
                     <div className='col-sm-10'>
@@ -80,4 +80,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default CompetitionAdd;

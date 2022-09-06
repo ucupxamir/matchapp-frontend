@@ -7,7 +7,7 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a className="nav-item nav-link active" href="/register">CREATE</a>
+                    <a className="nav-item nav-link active" href="/add-competition">CREATE</a>
                 </div>
             </div>
         </nav>
