@@ -87,7 +87,7 @@ const CompetitionList = () => {
                 <div className="modal-dialog modal-lg modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h4 className="modal-title">ADD NEW COIL</h4>
+                            <h4 className="modal-title">ADD NEW COMPETITION</h4>
                             <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
                         </div>
 
