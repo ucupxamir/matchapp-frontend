@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CompetitionService from '../services/CompetitionService';
+import moment from 'moment'
 
 const CompetitionList = () => {
     const [competitions, setCompetition] = useState([]);
@@ -67,6 +68,7 @@ const CompetitionList = () => {
                         <th>#</th>
                         <th>Competition</th>
                         <th>Location</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,6 +77,7 @@ const CompetitionList = () => {
                             <td className='text-center'>{index + 1}</td>
                             <td><Link to={`competitions/${competition.id}`} className='text-dark' style={{ textDecoration: 'none' }}>{competition.name}</Link></td>
                             <td>{competition.location}</td>
+                            <td className='text-center'>{moment(competition.start).format('DD MMM YYYY')} - {moment(competition.end).format('DD MMM YYYY')}</td>
                         </tr>
                     ))}
                 </tbody>

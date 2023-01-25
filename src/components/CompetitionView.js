@@ -55,10 +55,10 @@ const CompetitionView = () => {
                     {matches.map((match, index) => (
                         <tr key={match.id}>
                             <td className='text-center'>{index + 1}</td>
-                            <td>{(moment(match.date).format('dddd, DD MMM YYYY'))}</td>
-                            <td className='text-right'>{match.Schedules[0].Team.name}</td>
+                            <td>{(moment(match.date).format('ddd, DD MMM YYYY'))}</td>
+                            <td className='text-end'>{match.Schedules[0].Team.name}</td>
                             <td className='text-center'>VS</td>
-                            <td className='text-left'>{match.Schedules[1].Team.name}</td>
+                            <td className='text-start'>{match.Schedules[1].Team.name}</td>
                         </tr>
                     ))}
                 </tbody>
